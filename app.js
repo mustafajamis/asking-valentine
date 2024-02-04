@@ -1,45 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
-    function checkboxCallback(answer) {
-        displayResponse(answer);
+function displayResponse(answer) {
+    var responseElement = document.getElementById('response');
+    responseElement.innerHTML = '';
+
+    if (answer === 'yes') {
+        var imagePath = 'happy.png';
+        responseElement.innerHTML = '<img src="' + imagePath + '" alt="Happy Image">';
+    } else if (answer === 'no') {
+        var imagePath = 'sad.jpg';
+        responseElement.innerHTML = '<img src="' + imagePath + '" alt="Stupid Image">';
     }
 
-    function displayResponse(answer) {
-        var responseElement = document.getElementById('response');
-        responseElement.innerHTML = '';
-
-        if (answer === 'yes') {
-            responseElement.innerHTML = 'That\'s wonderful! 🥰 Happy Valentine\'s Day!';
-        } else if (answer === 'no') {
-            responseElement.innerHTML = 'Oh no! 😢 Maybe next time.';
-        }
-    }
-});
-document.addEventListener('DOMContentLoaded', function () {
-    function checkboxCallback(answer) {
-        displayResponse(answer);
-    }
-
-    function addGif() {
-        var gifInput = document.getElementById('gifInput');
-        var gifUrl = gifInput.value;
-
-        if (gifUrl.trim() !== '') {
-            var gifContainer = document.getElementById('gifContainer');
-            var gifImage = document.createElement('img');
-            gifImage.src = gifUrl;
-            gifContainer.innerHTML = '';
-            gifContainer.appendChild(gifImage);
-        }
-    }
-
-    function displayResponse(answer) {
-        var responseElement = document.getElementById('response');
-        responseElement.innerHTML = '';
-
-        if (answer === 'yes') {
-            responseElement.innerHTML = 'That\'s wonderful! 🥰 Happy Valentine\'s Day!';
-        } else if (answer === 'no') {
-            responseElement.innerHTML = 'Oh no! 😢 Maybe next time.';
-        }
-    }
-});
+    // Add heart-shaped overlay
+    var heartOverlay = document.createElement('div');
+    heartOverlay.classList.add('heart-overlay');
+    responseElement.appendChild(heartOverlay);
+}
