@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Proposal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="root">
+        <div class="text">
+            <h1>Will you be my Valentine?</h1>
+        </div>
+        <div class="buttons">
+            <button onclick="checkboxCallback('yes')">Yes!</button>
+            <button onclick="checkboxCallback('no')">No, sorry</button>
+        </div>
+        <div class="response" id="response">
+            <input type="text" id="gifInput" placeholder="Enter GIF URL">
+            <button onclick="addGif()">Add GIF</button>
+            <div id="gifContainer"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
